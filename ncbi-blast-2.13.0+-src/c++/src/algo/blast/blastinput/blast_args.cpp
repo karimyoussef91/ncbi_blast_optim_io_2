@@ -3334,6 +3334,9 @@ CStdCmdLineArgs::SetArgumentDescriptions(CArgDescriptions& arg_desc)
     if (m_GzipEnabled) {
         arg_desc.AddFlag(kArgOutputGzip, "Output will be compressed");
     }
+    
+    // Privateer datastore Args 
+    // TODO: Create CArgDescriptions for it, then AddDefaultKey
 
     arg_desc.SetCurrentGroup("");
 }

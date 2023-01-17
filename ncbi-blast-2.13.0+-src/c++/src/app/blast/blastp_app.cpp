@@ -42,6 +42,8 @@
 #include "blast_app_util.hpp"
 #include "blastp_node.hpp"
 
+#include <iostream>
+
 #ifndef SKIP_DOXYGEN_PROCESSING
 USING_NCBI_SCOPE;
 USING_SCOPE(blast);
@@ -212,14 +214,14 @@ int CBlastpApp::x_RunMTBySplitDB()
                 lcl_blast.SetNumberOfThreads(m_CmdLineArgs->GetNumThreads());
                 results = lcl_blast.Run();
             }
-
-            if (fmt_args->ArchiveFormatRequested(args)) {
+            std::cout << "Printing output" << std::endl;
+            if (fmt_args->ArchiveFormatRequested(args)) { std::cout << "printing output Archive" << std::endl;
                 formatter.WriteArchive(*queries, *opts_hndl, *results,  0, bah.GetMessages());
                 bah.ResetMessages();
-            } else {
+            } else {  std::cout << "printing output NOT Archive" << std::endl;
                 BlastFormatter_PreFetchSequenceData(*results, scope,
                 		                            fmt_args->GetFormattedOutputChoice());
-                ITERATE(CSearchResultSet, result, *results) {
+                ITERATE(CSearchResultSet, result, *results) { std::cout << "Iterating" << std::endl;
                     formatter.PrintOneResultSet(**result, query_batch);
                 }
             }

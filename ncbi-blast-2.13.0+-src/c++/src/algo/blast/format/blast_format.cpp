@@ -749,6 +749,7 @@ void
 CBlastFormat::x_PrintTabularReport(const blast::CSearchResults& results, 
                                    unsigned int itr_num)
 {
+    // std::cout << "PRINTING TABULAR REPORT" << std::endl;
     CConstRef<CSeq_align_set> aln_set = results.GetSeqAlign();
     if (m_IsUngappedSearch && results.HasAlignments()) {
         aln_set.Reset(CDisplaySeqalign::PrepareBlastUngappedSeqalign(*aln_set));
@@ -1404,7 +1405,7 @@ CBlastFormat::PrintOneResultSet(const blast::CSearchResults& results,
                         blast::CPsiBlastIterationState::TSeqIds prev_seqids
                         /* = CPsiBlastIterationState::TSeqIds() */,
                         bool is_deltablast_domain_result /* = false */)
-{
+{   
     // For remote searches, we don't retrieve the sequence data for the query
     // sequence when initially sending the request to the BLAST server (if it's
     // a GI/accession/TI), so we flush the scope so that it can be retrieved

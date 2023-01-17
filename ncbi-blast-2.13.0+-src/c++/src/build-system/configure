@@ -35280,8 +35280,8 @@ fi
 
 
 ### Restore original compiler/linker flags
-LIBS="$orig_LIBS"
-CPPFLAGS="$orig_CPPFLAGS"
+LIBS="-L/home/karimy/Privateer/build_tinkercliffs/lib -lprivateer -fopenmp -lstdc++ -lstdc++fs -lcrypto -lrt -L/apps/easybuild/software/tinkercliffs-rome/zstd/1.4.9-GCCcore-10.3.0/lib64 -lzstd $orig_LIBS"
+CPPFLAGS="-I/home/karimy/Privateer/build_tinkercliffs/include -DUSE_COMPRESSION -I/apps/easybuild/software/tinkercliffs-rome/zstd/1.4.9-GCCcore-10.3.0/include -std=c++17 $orig_CPPFLAGS"
 
 
 ### Optional projects
@@ -37639,8 +37639,8 @@ For the available configuration flags run:  ./configure --help
 
 CFLAGS   = $CFLAGS
 CXXFLAGS = $CXXFLAGS
-CPPFLAGS = $CPPFLAGS
-LDFLAGS  = $LDFLAGS
+CPPFLAGS = "-I/home/karimy/Privateer/build_tinkercliffs/include -DUSE_COMPRESSION -I/apps/easybuild/software/tinkercliffs-rome/zstd/1.4.9-GCCcore-10.3.0/include $CPPFLAGS"
+LDFLAGS  = "-L/home/karimy/Privateer/build_tinkercliffs/lib -lprivateer -fopenmp -lstdc++ -lstdc++fs -lcrypto -lrt -L/apps/easybuild/software/tinkercliffs-rome/zstd/1.4.9-GCCcore-10.3.0/lib64 -lzstd $LDFLAGS"
 
 $DLL_USAGE
 FEATURES:   $WithFeatures

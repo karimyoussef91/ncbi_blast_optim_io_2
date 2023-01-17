@@ -50,6 +50,8 @@
 
 #include <map>
 
+#include <privateer/privateer.hpp>
+
 BEGIN_NCBI_SCOPE
 USING_SCOPE(objects);
 BEGIN_SCOPE(align_format)

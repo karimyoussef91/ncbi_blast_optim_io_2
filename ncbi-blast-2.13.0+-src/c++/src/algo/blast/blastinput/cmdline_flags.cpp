@@ -47,6 +47,10 @@ const string kArgQuery("query");
 const string kDfltArgQuery("-");
 const string kArgOutput("out");
 
+// Arguments to store output to a Privateer datastore
+const string kArgPrivateerBaseDir("privateer_base_dir");
+const string kArgPrivateerImageName("privateer_image_name");
+
 const string kArgDb("db");
 const string kArgSubject("subject");
 

@@ -1382,6 +1382,7 @@ public:
     static bool HasBeenSet(const CArgs& args);
 };
 
+
 /// Type definition of a container of IBlastCmdLineArgs
 typedef vector< CRef<IBlastCmdLineArgs> > TBlastCmdLineArgs;
 
